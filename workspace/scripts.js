@@ -23,7 +23,7 @@ $( document ).ready(function() {
   // 4 functions
 
   // this function creates and defines all of our cubes
-  initCube();
+  initCubes();
 
   // this function renders our cubes array in simple html
   printCraigsList();
@@ -138,10 +138,14 @@ $( document ).ready(function() {
        //  material - what is the shape made of... this drives things like color, shine, shadows, etc.
        //  mesh - this combines the geometry and material into something we can add to a scene
 
-       var geometry = new THREE.BoxBufferGeometry( value.size, value.size, value.size );
-       var material = new THREE.MeshPhongMaterial( );
 
-       // this is where we change the color of the new cube
+       // var geometry = new THREE.BoxBufferGeometry( value.size, value.size, value.size );
+       var geometry = new THREE.IcosahedronGeometry(value.size, 0);
+       var material = new THREE.MeshPhongMaterial( );
+       var color = new THREE.Color( 0xff0000 );
+       var fog = new THREE.Fog( color, 1, 1000 )
+
+     // this is where we change the color of the new cube
        // to reflect the color of our current cube in the cubes array
        material.color.setHex("0x" + value.color + "");
 
