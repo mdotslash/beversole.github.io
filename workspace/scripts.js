@@ -23,7 +23,7 @@ $( document ).ready(function() {
   // 4 functions
 
   // this function creates and defines all of our cubes
-  initCubes();
+  initCube();
 
   // this function renders our cubes array in simple html
   printCraigsList();
